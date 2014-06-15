@@ -19,12 +19,13 @@ class Fluent::NavigationTimingOutput < Fluent::Output
       new_record = {}
       new_record['redirect'] = record['redirectEnd'].to_i - record['redirectStart'].to_i
       new_record['appCache'] = record['domainLookupStart'].to_i - record['fetchStart'].to_i
-      new_reocrd['dns']      = record['domainLookupEnd'].to_i - record['domainLookupStart'].to_i
+      new_record['dns']      = record['domainLookupEnd'].to_i - record['domainLookupStart'].to_i
       new_record['tcp']      = record['connectionEnd'].to_i - record['connectionStart'].to_i
       new_record['request']  = record['responseStart'].to_i - record['requestStart'].to_i
       new_record['response'] = record['responseEnd'].to_i - record['responseStart'].to_i
       new_record['dom']      = record['domComplete'].to_i - record['domLoading'].to_i
       new_record['onLoad']   = record['loadEventEnd'].to_i - record['loadEventStart'].to_i
+      log.info "out_navigation_timing: #{new_record}"
       Fluent::Engine.emit(@tag, time, new_record)
     end
 
