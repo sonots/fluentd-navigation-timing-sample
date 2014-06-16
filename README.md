@@ -1,7 +1,7 @@
 fluentd-navigation-timing-sample
 ================================
 
-ブラウザの Navigation Timing API の結果を HTTP JSON API で受け取って Yohoushi に投げるサンプル
+ブラウザの Navigation Timing API の結果を HTTP JSON API で受け取って GrowthForecast に投げるサンプル
 
 # How to Use
 
