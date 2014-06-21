@@ -1,0 +1,11 @@
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+  $.ajax({
+    type:"post",
+    url:"/raw.navigation_timing",
+    data:JSON.stringify(performance.timing, null, " "),
+    contentType: 'application/json',
+    dataType: "json",
+    success: function() {}
+  })
+</script>
